@@ -10,7 +10,6 @@ class FilterData:object{
 	public string filePath;
 	public FilterData(Object obj){
 		filePath = AssetDatabase.GetAssetPath(obj);
-		filePath = filePath.Substring(7, filePath.Length-7);
 	}
 }
 
@@ -88,7 +87,7 @@ class ObjectData:object{
 		model_id = id;
 		name = obj.name;
 		script = AssetDatabase.GetAssetPath(obj.python_script);
-		script = script.Substring(7, script.Length-7);
+		script = script.Substring(19, script.Length-22);
 		obj_class = obj.python_class;
 		physics_options = new PhysicsOptionsData(obj);
 	}
@@ -163,7 +162,7 @@ class MatieralData:object{
 	public float linear_stiffness;
 	public float volume_preservation;
 	public MatieralData(AsteroidMaterial mat){
-		name = mat.name;
+		name = mat.material_name;
 		angular_stiffness = mat.angular_stiffness;
 		linear_stiffness = mat.linear_stiffness;
 		volume_preservation = mat.volume_preservation;
