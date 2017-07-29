@@ -252,7 +252,7 @@ class AsteroidData:object{
 		objects = objectList.ToArray();
 
 		//Finally, do the config
-		env_config = new EnvData(action_dim, ac, sk, cam);
+		env_config = new EnvData(action_dim, sk, ac, cam);
 	}
 }
 
