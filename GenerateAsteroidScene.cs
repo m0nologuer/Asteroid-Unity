@@ -47,13 +47,18 @@ class BufferData:object{
 [System.Serializable]
 class ModelData:object{
 	public string mesh;
+	public string texture;
 	public ModelData(GameObject gameObject){
 		mesh = AssetDatabase.GetAssetPath(gameObject.GetComponentsInChildren<MeshFilter>()[0].sharedMesh.GetInstanceID());
-		
+		texture = AssetDatabase.GetAssetPath(gameObject.GetComponentsInChildren<MeshRenderer>()[0].material.mainTexture);
+
 		mesh = mesh.Substring(7, mesh.Length-7);
+		if (texture.Length > 7) {
+			texture = texture.Substring(7, texture.Length-7);
+		}
+		
 	}
 }
-
 [System.Serializable]
 class PhysicsOptionsData:object{
 	public string name;
