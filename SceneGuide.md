@@ -64,3 +64,5 @@ The scene description is what holds the whole simulation together. It references
 
 ### Scripting
 
+The ["component.py" script](https://gist.github.com/m0nologuer/5415e5ea9cf83335d3882bec8b6badc8) contains a component class that every object controller script should be derived from.
+
