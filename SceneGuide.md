@@ -19,59 +19,48 @@ Materials describe the physical properties of the object, for use in physics sim
 
 Object lists control groups of objects. The one thing they do differently is allow for some randomness in the simulation.
 
-- public AsteroidObject[] children: the Asteroid objects included in this list.
+- children: the Asteroid objects included in this list.
 
-- public bool use_randomizer: do we enable the randomizer at all?
-- public bool use_color_randomizer: if enabled, the objects in that list will be spawned with a new color every time
-- public bool use_texture_randomizer: if enabled, the objects in that list will have noise randomly added to their texture
-- public bool use_material_randomizer: if enabled, the objects in that list will have their physical properies randomized
-- public bool use_spawn_randomizer: if enabled, the objects in that list will be spawned at random positions
+- use_randomizer: do we enable the randomizer at all?
+- use_color_randomizer: if enabled, the objects in that list will be spawned with a new color every time
+- use_texture_randomizer: if enabled, the objects in that list will have noise randomly added to their texture
+- use_material_randomizer: if enabled, the objects in that list will have their physical properies randomized
+- use_spawn_randomizer: if enabled, the objects in that list will be spawned at random positions
 
-- public float random_material_variance: the variance with which to randomize physical material properties
-- public float random_color_brightness: the brightness of the random colors, ranging from 0 (black) to 1 (e.g. bright red)
+- random_material_variance: the variance with which to randomize physical material properties
+- random_color_brightness: the brightness of the random colors, ranging from 0 (black) to 1 (e.g. bright red)
 
-- public int spawn_number: number of objects n to be spawned each time (we select at random n from the list of all objects)
-- public float spawn_x: if we take the position & orientation of the list object as the origin, how far away in the x direction can the objects be randomly spawned
-- public float spawn_y: same as above, except for y direction.
+- spawn_number: number of objects n to be spawned each time (we select at random n from the list of all objects)
+- spawn_x: if we take the position & orientation of the list object as the origin, how far away in the x direction can the objects be randomly spawned
+- spawn_y: same as above, except for y direction.
 
 ### Buffers
 
 It's possible to render to multiple buffers using different shaders. This might be desirable if, for example, you want to have one buffer that contains an image render, and another that contains a segmented image. At the moment, only Cg shaders are supported. 
   
- - public string name: buffer name
- - public Object shader : main shader path
- - public Object[] filters : a bunch of screen space post-processing filters path
+ - name: buffer name
+ - shader : main shader path
+ - filters : a bunch of screen space post-processing filters path
 
 ### Constraints
 
 These are used to fixing two objects to each other, or to the scene. See [Bullet constraints](https://www.panda3d.org/manual/index.php/Bullet_Constraints) for more details.
 
-- public AsteroidObject object1: the first object to attach
-- public AsteroidObject object2: the second object to attach (can be blank, in which case we are just fixing an object in place)
+- object1: the first object to attach
+- object2: the second object to attach (can be blank, in which case we are just fixing an object in place)
+- type - Hinge, Ball, Slider or Cone
 
-- public ConstraintType type - Hinge, Ball, Slider or Cone
-
-These three variables set properties of the constraint depending on which type it is.
-
-- public float var1
-- public float var2
-- public float var3 
+The three "var" varibles set properties of the constraint depending on which type it is.
 
 
 ### Scene description
 
-The scene description is what holds the whole simulation together. It references the object lists, materials, camera and buffers. Most is self-explanatory:
+The scene description is what holds the whole simulation together. It references the object lists, materials, camera and buffers, which are self-explanatory. The other variables:
 
-- public Buffer[] buffers
-- public AsteroidObjectList[] object_lists
-- public AsteroidMaterial[] materials
-- Camera camera
-- public Light lights: only point lights are processed correctely
-
-
-- public int action_dim - the number of degrees of freedom of user input
-- public AsteroidObject action_controller - action controller is an object whose script contains a function "act" for processing the user's input
-- public AsteroidObject score_keeper - score keeper is an object whose script keeps tabs on whether the sim is over, and what the score is
+- lights: only point lights are processed correctely
+- action_dim: the number of degrees of freedom of user input
+- action_controller: action controller is an object whose script contains a function "act" for processing the user's input
+- score_keeper: score keeper is an object whose script keeps tabs on whether the sim is over, and what the score is
 
 ### Scripting
 
