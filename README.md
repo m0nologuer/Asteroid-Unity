@@ -10,7 +10,7 @@ To get started,
 1. Download the entire folder Asteroid-Unity into the Assets folder of your Unity project.
 2. Create *three folders*, one called 'assets', one called 'shaders' and one called 'userscripts', both in the main Assets folder
 
-![alt text](http://imgur.com/a/yrgkS "Logo Title Text 1")
+![alt text](http://i.imgur.com/6hg06xg.png "Logo Title Text 1")
 
 
   **Assets**
