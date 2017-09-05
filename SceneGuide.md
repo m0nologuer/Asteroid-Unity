@@ -41,6 +41,8 @@ The randomizer tree works by selecting a random option every time the simulation
 
 The named options selected by the randomizer are stored, and can be used for scripting behavior.
 
+For *independent* events, it's best to start a new randomizer tree. For *conditional* events, they should be stacked together in the same tree.
+
 #### Asteroid Randomizer
 
 Randomizers can come in useful for creating variations on the scene that you have.
@@ -48,6 +50,8 @@ Randomizers can come in useful for creating variations on the scene that you hav
 - color randomizer: if enabled, the objects in that list will be spawned with a new color every time
 - texture randomier: if enabled, the objects in that list will have noise randomly added to their texture
 - spawn randomizer: if enabled, the objects in that list will be spawned at random positions
+
+An overview of the variables used in these randomizers.
 
 - random_color_brightness: the brightness of the random colors, ranging from 0 (black) to 1 (e.g. bright red)
 
