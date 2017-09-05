@@ -18,8 +18,7 @@ To get started,
   
   **Scripts**
   * The userscripts folder is for Python scripts. Scripts are used to control the actions of every object in the scene.
-  * Check out the scripting guide for more into.
-  * [Optional] You can initialize a github repo in this folder. If you add a remote, Asteroid will automatically pull the most recent version of the scripting code from that repo (especially useful when debugging).
+  * [Optional] You can initialize a github repo in this folder. If you add a remote, Asteroid will automatically keep pulling the most recent version of the scripting code from that repo (especially useful when debugging).
   
   **Shaders**
   * The shaders folder is for custom shaders - each 'render mode' of the scene may be different.
@@ -27,8 +26,7 @@ To get started,
 
 3. Create an empty GameObject in Unity and add to that the script 'GenerateAsteroidScene.cs'. 
   * This object, when filled in, should contain everything relevant to the simulation scene.
-  * [More on how to fill this scene out below]
-  * When you press play, it will generate a json representation of the scene at Assets/assets/scene.json
+  * When you press play, it will **generate a json representation** of the scene at Assets/assets/scene.json
 
 4. Zip the assets, shaders and userscripts folder into a single zip file & upload to Asteroid!
 
