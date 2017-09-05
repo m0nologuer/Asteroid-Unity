@@ -3,6 +3,8 @@ This is a Unity plugin for creating simulations that can be run on the Asteroid 
 
 Asteroid simulations are an entirely different thing from Unity scenes - it's just convinient to use Unity to design them.
 
+You may want to start by checking out the sample scenes [here](https://github.com/m0nologuer/Asteroid-Sim-Example).
+
 ## Getting started
 
 To get started,
