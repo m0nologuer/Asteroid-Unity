@@ -1,3 +1,5 @@
+![alt text](http://i.imgur.com/KnbNek9.png "Logo Title Text 1")
+
 ### Objects
 
 Asteroid Objects are regular 3D objects in the scene. Physics is applied to these objects automatically. They may also have a script attached to them that controls behavior.
@@ -7,32 +9,19 @@ Asteroid Objects are regular 3D objects in the scene. Physics is applied to thes
 - python_class : the name of the class that controls the behavior of the object
 - mass : for the physics simulator
 - velocity : for the physics simulator
-- material: asteroid material that describes physical properties.
   
-When objects have a script attached to it, that derives from the class in the ["component.py" script](https://gist.github.com/m0nologuer/5415e5ea9cf83335d3882bec8b6badc8) 
+When objects have a script attached to it, that derives from the class in the ["component.py" script](https://gist.github.com/m0nologuer/5415e5ea9cf83335d3882bec8b6badc8). See the [scripting guide](https://github.com/m0nologuer/Asteroid-Unity/blob/master/ScriptingGuide.md) for more info about this.
 
-### Materials
+### Physically Based Rendering
 
-Materials describe the physical properties of the object, for use in physics simulation. Every material referenced by an object must be included in the master list of materials attached to the scene description.
+![alt text](http://i.imgur.com/N8WTlO0.png "Logo Title Text 1")
+
+Every rendered object in the scene should use the Asteroid PBR shader. Th
 
 ### Object lists
 
-Object lists control groups of objects. The one thing they do differently is allow for some randomness in the simulation.
+Object lists control groups of objects. Groups of 
 
-- children: the Asteroid objects included in this list.
-
-- use_randomizer: do we enable the randomizer at all?
-- use_color_randomizer: if enabled, the objects in that list will be spawned with a new color every time
-- use_texture_randomizer: if enabled, the objects in that list will have noise randomly added to their texture
-- use_material_randomizer: if enabled, the objects in that list will have their physical properies randomized
-- use_spawn_randomizer: if enabled, the objects in that list will be spawned at random positions
-
-- random_material_variance: the variance with which to randomize physical material properties
-- random_color_brightness: the brightness of the random colors, ranging from 0 (black) to 1 (e.g. bright red)
-
-- spawn_number: number of objects n to be spawned each time (we select at random n from the list of all objects)
-- spawn_x: if we take the position & orientation of the list object as the origin, how far away in the x direction can the objects be randomly spawned
-- spawn_y: same as above, except for y direction.
 
 ### Buffers
 
@@ -55,15 +44,16 @@ The three "var" varibles set properties of the constraint depending on which typ
 
 ### Scene description
 
-The scene description is what holds the whole simulation together. It references the object lists, materials, camera and buffers, which are self-explanatory. The other variables:
+The scene description is what holds the whole simulation together. It references the object lists and buffers, as well as:
 
 - lights: only point lights are processed correctely
 - action_dim: the number of degrees of freedom of user input
 - action_controller: action controller is an object whose script contains a function "act" for processing the user's input
 - score_keeper: score keeper is an object whose script keeps tabs on whether the sim is over, and what the score is
+- camera
 
 ### Scripting
 
 The ["component.py" script](https://gist.github.com/m0nologuer/5415e5ea9cf83335d3882bec8b6badc8) contains a component class that every object controller script should be derived from.
 
-Check out the commented out code for an idea of what each object script should contain.
+Check out the [scripting guide](https://github.com/m0nologuer/Asteroid-Unity/blob/master/ScriptingGuide.md) for an idea of what each object script should contain.
