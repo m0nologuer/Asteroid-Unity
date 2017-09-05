@@ -1,3 +1,5 @@
+# Asteroid Scene Guide
+
 ![alt text](http://i.imgur.com/KnbNek9.png "Logo Title Text 1")
 
 ### Objects
@@ -20,16 +22,20 @@ Every rendered object in the scene should use the Asteroid PBR shader. Th
 
 ### Object lists
 
-Object lists control groups of objects. Groups of 
+Object lists control groups of objects. Every object that is part of the simulation should be connected to one of these. The main point of sorting objects into lists is so you can apply randomizers.
+
+### Randomizers
 
 
-### Buffers
 
-It's possible to render to multiple buffers using different shaders. This might be desirable if, for example, you want to have one buffer that contains an image render, and another that contains a segmented image. At the moment, only Cg shaders are supported. 
+### Sensors
+
+It's possible to render the scene from the perspective of different "sensors". This might be desirable if, for example, you want to have one buffer that contains an image render, and another that contains a segmented image. Each of these sensors is rendered from the perspective of a certain camera with a certain shader. At the moment, only Cg and HLSL  shaders are supported. 
   
  - name: buffer name
  - shader : main shader path
  - filters : a bunch of screen space post-processing filters path
+ - camera_object: the object which the camera should track
 
 ### Constraints
 
