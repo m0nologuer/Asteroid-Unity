@@ -32,9 +32,11 @@ To get started,
 
 ## Creating a scene
 
-Check out the Unity sample scene [here](https://github.com/m0nologuer/Asteroid-Sim-Example).
+Check out the Unity sample scenes [here](https://github.com/m0nologuer/Asteroid-Sim-Example).
 
 For a more detailed guide of how to create a scene [here](https://github.com/m0nologuer/Asteroid-Unity/blob/master/SceneGuide.md).
+
+For a more detailed scripting guide go [here](https://github.com/m0nologuer/Asteroid-Unity/blob/master/SceneGuide.md).
 
 ## Support
 Email saku.p@cantab.net for absolutely anything related to support, feature requests etc etc.
