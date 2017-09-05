@@ -28,7 +28,7 @@ Object lists control groups of objects. Every object that is part of the simulat
 
 ![alt text](http://i.imgur.com/lKvrzhW.png "Logo Title Text 1")
 
-Randomizers are used to change 
+Randomizers are used to vary the simulaiton every time it is run. Every simulation can have multiple randomizer trees.  
 
 ### Sensors
 
