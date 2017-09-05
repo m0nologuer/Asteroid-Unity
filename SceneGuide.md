@@ -28,7 +28,32 @@ Object lists control groups of objects. Every object that is part of the simulat
 
 ![alt text](http://i.imgur.com/lKvrzhW.png "Logo Title Text 1")
 
-Randomizers are used to vary the simulaiton every time it is run. Every simulation can have multiple randomizer trees.  
+Randomizers are used to vary the simulaiton every time it is run. Every simulation can have multiple randomizer trees. Randomizer trees are like root nodes to which you can attach different randomizers.
+
+#### Asteroid Randomizer Tree
+
+- target: object list that the tree acts on
+- options: array of named options (can be any strings)
+- probabilities: array of probabilities (should add up to one)
+- randomizers: array of randomizers to call next.
+
+The randomizer tree works by selecting a random option every time the simulation is spawned. Depending on the random choice that time, **it applies the randomizer in the corresponding slot**. The randomizer in any slot can *itself* be a randomizer tree- which allows for unlimitied branching.
+
+The named options selected by the randomizer are stored, and can be used for scripting behavior.
+
+#### Asteroid Randomizer
+
+Randomizers can come in useful for creating variations on the scene that you have.
+
+- color randomizer: if enabled, the objects in that list will be spawned with a new color every time
+- texture randomier: if enabled, the objects in that list will have noise randomly added to their texture
+- spawn randomizer: if enabled, the objects in that list will be spawned at random positions
+
+- random_color_brightness: the brightness of the random colors, ranging from 0 (black) to 1 (e.g. bright red)
+
+- spawn_number: number of objects n to be spawned each time (we select at random n from the list of all objects)
+- spawn_x: if we take the position & orientation of the list object as the origin, how far away in the x direction can the objects be randomly spawned
+- spawn_y: same as above, except for y direction.
 
 ### Sensors
 
