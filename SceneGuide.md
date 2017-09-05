@@ -18,7 +18,7 @@ When objects have a script attached to it, that derives from the class in the ["
 
 ![alt text](http://i.imgur.com/N8WTlO0.png "Logo Title Text 1")
 
-Every rendered object in the scene should use the Asteroid PBR shader. Th
+Every rendered object in the scene has to use the Asteroid PBR shader. The variables set in the shader are used for rendering in the simulation.
 
 ### Object lists
 
@@ -26,7 +26,9 @@ Object lists control groups of objects. Every object that is part of the simulat
 
 ### Randomizers
 
+![alt text](http://i.imgur.com/lKvrzhW.png "Logo Title Text 1")
 
+Randomizers are used to change 
 
 ### Sensors
 
@@ -44,19 +46,25 @@ These are used to fixing two objects to each other, or to the scene. See [Bullet
 - object1: the first object to attach
 - object2: the second object to attach (can be blank, in which case we are just fixing an object in place)
 - type - Hinge, Ball, Slider or Cone
+- frame1: the first rotation & positional frame of the constraints. 
+- frame2: the second frame (can be blank) 
 
-The three "var" varibles set properties of the constraint depending on which type it is.
+![alt text](http://i.imgur.com/eDu2Ejb.png "Logo Title Text 1")
+
+The prefab "Asteroid Constraint Frame" which has a model arrow attached can be used to specify the frames. 
+
+The three "var" varibles set properties of the constraint depending on which type it is. They are only relevant to the hinge and cone constraints. Var1 and Var2 represent the angular degrees of freedom.
 
 
 ### Scene description
 
-The scene description is what holds the whole simulation together. It references the object lists and buffers, as well as:
+The scene description is what holds the whole simulation together. It references the object lists and sensors, as well as:
 
 - lights: only point lights are processed correctely
 - action_dim: the number of degrees of freedom of user input
 - action_controller: action controller is an object whose script contains a function "act" for processing the user's input
 - score_keeper: score keeper is an object whose script keeps tabs on whether the sim is over, and what the score is
-- camera
+- camera: the camera object
 
 ### Scripting
 
