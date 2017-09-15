@@ -52,8 +52,9 @@
    
   `def act(self, action, object_array):
 	 self.physics.velocity.x += action[0] * self.dt
-	 self.physics.velocity.y += action[1] * self.dt`
-  
+	 self.physics.velocity.y += action[1] * self.dt `
+	 
+	 
     The action is an array of floats, that are sent via the 'act' API call. The size of the array corresponds to the number of degrees of freedom of the simulation.
 
   #### Essential: Action Monitor
